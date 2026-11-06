@@ -234,10 +234,11 @@ button { font: inherit; cursor: pointer; }
 /* ---------- Footer ---------- */
 .site-footer { overflow: hidden; background: #04090b url(/images/footer-bg.webp) center / cover no-repeat; color: #d6d9dc; font-family: "Montserrat", sans-serif; position: relative; z-index: 2; }
 .footer-widgets { background: rgba(4, 9, 11, .8); padding: 80px 0 90px; }
-.footer-widgets .container { max-width: 1300px; padding: 0 70px; }
-.footer-cols { display: grid; grid-template-columns: 1.15fr 1fr 1fr 1.1fr; }
-.fcol { padding: 0 70px 20px; border-left: 1px solid rgba(255,255,255,.12); }
-.fcol:first-child { padding-left: 0; border-left: 0; }
+.footer-widgets .container { max-width: 1440px; padding: 0 70px; }
+.footer-cols { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.15fr; }
+.fcol { padding: 0 24px 20px 70px; border-left: 1px solid rgba(255,255,255,.12); }
+.fcol:first-child { padding: 0 40px 20px 0; border-left: 0; }
+.fcol:last-child { padding-right: 0; }
 .fcol-brand img { width: 170px; margin-bottom: 26px; }
 .fcol-brand p { font-size: 16px; line-height: 30px; max-width: 290px; }
 .fcol h2 { font-family: var(--font-head); font-weight: 700; font-size: 30px; line-height: 36px; color: #fff; display: flex; align-items: center; gap: 8px; margin-bottom: 26px; }
@@ -444,4 +445,65 @@ html.has-cursor, html.has-cursor * { cursor: none !important; }
   .skills { grid-template-columns: 1fr; }
   .cm-grid { grid-template-columns: 1fr; }
   .team-card h4 { font-size: 36px; }
+}
+
+/* ---------- Bloc contact (adresse / coordonnées / photo) ---------- */
+.contact-info { padding: 120px 0 100px; }
+.contact-info .container { max-width: 1360px; }
+.contact-info-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 30px; align-items: start; }
+.ci-card { padding: 44px 44px 40px; min-height: 305px; }
+.ci-light { background: #e4e6ea; }
+.ci-light .eyebrow { margin-bottom: 4px; font-size: 16px; font-weight: 500; }
+.ci-light h2 { font-family: var(--font-head); font-weight: 700; font-size: 52px; line-height: 56px; color: var(--heading); margin-bottom: 40px; }
+.ci-light p { font-size: 16px; line-height: 27px; margin-bottom: 22px; max-width: 290px; }
+.ci-social { display: flex; gap: 10px; }
+.ci-social a { width: 40px; height: 40px; background: #0b1b24; color: #fff; display: grid; place-items: center; transition: background .25s; }
+.ci-social a:hover { background: var(--primary); }
+.ci-dark { background: #1f2630; color: #fff; margin-top: 4px; padding: 40px 44px 30px; min-height: 297px; }
+.ci-dark .eyebrow { margin-bottom: 4px; font-size: 16px; font-weight: 500; }
+.ci-dark h2 { white-space: nowrap; font-family: var(--font-head); font-weight: 700; font-size: 52px; line-height: 56px; color: #fff; margin-bottom: 18px; }
+.ci-line { display: flex; align-items: center; gap: 18px; color: #fff; font-size: 22px; line-height: 30px; padding: 16px 0; }
+.ci-line svg { color: var(--primary); flex: none; }
+.ci-line + .ci-line { border-top: 1px solid rgba(255,255,255,.55); }
+.ci-line:hover span { color: var(--primary); }
+.ci-photo { overflow: hidden; height: 305px; }
+.ci-photo img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Formulaire de contact ---------- */
+.contact-form-section { padding: 30px 0 110px; }
+.contact-form-section .container { max-width: 1360px; }
+.contact-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: stretch; }
+.cf-left .title-xl { max-width: 440px; margin-bottom: 26px; }
+.cf-intro { font-size: 16px; margin-bottom: 30px; }
+.cf-form { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 26px; }
+.cf-form label { display: flex; flex-direction: column; gap: 4px; font-size: 16px; color: var(--text); }
+.cf-form label.full, .cf-form .full { grid-column: 1 / -1; }
+.cf-form input, .cf-form textarea { width: 100%; border: 1px solid #dcdfe3; background: #fff; padding: 0 14px; height: 52px; font: inherit; color: var(--secondary); outline: 0; }
+.cf-form textarea { height: 130px; padding-top: 12px; resize: vertical; }
+.cf-form input:focus, .cf-form textarea:focus { border-color: var(--primary); }
+.cf-map { min-height: 540px; background: var(--light); }
+.cf-map iframe { width: 100%; height: 100%; min-height: 540px; border: 0; }
+
+/* ---------- Page Testimonial ---------- */
+.testi-page { padding: 110px 0 110px; }
+.testi-page .container { max-width: 1380px; }
+.testi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; }
+.testi-card { background: #e4e6ea; text-align: center; padding: 28px 30px 40px; }
+.testi-card svg { color: var(--primary); margin: 0 auto 22px; }
+.testi-card p { font-size: 15px; line-height: 24px; color: #6b6e75; max-width: 540px; margin: 0 auto 22px; }
+.testi-card img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin: 0 auto 12px; background: #fff; }
+.testi-card h4 { font-family: var(--font-head); font-weight: 700; font-size: 40px; line-height: 44px; color: var(--secondary); }
+.testi-card span { color: var(--primary); font-size: 16px; }
+
+@media (max-width: 1100px) {
+  .contact-info-grid { grid-template-columns: 1fr 1fr; }
+  .ci-photo { grid-column: 1 / -1; height: 300px; }
+  .contact-form-grid { grid-template-columns: 1fr; gap: 50px; }
+}
+@media (max-width: 700px) {
+  .contact-info-grid { grid-template-columns: 1fr; }
+  .ci-card { padding: 30px 24px; }
+  .cf-form { grid-template-columns: 1fr; }
+  .testi-grid { grid-template-columns: 1fr; }
+  .contact-info { padding: 70px 0 60px; }
 }

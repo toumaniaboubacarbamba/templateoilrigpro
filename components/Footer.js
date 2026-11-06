@@ -14,7 +14,7 @@ export default function Footer() {
             <div className="fcol">
               <h2><Drop /> Quicklink</h2>
               <ul>
-                {[["About us", "/about"], ["Team", "/team"], ["Testimonial", "#"]].map(([l, h]) => (
+                {[["About us", "/about"], ["Team", "/team"], ["Testimonial", "/testimonial"]].map(([l, h]) => (
                   <li key={l}><ArrowUpRight /><Link href={h}>{l}</Link></li>
                 ))}
               </ul>

@@ -124,3 +124,39 @@ export function ArrowUpLeft({ size = 14 }) {
     </svg>
   );
 }
+export function Twitter({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M22 5.9c-.7.3-1.5.5-2.4.6.9-.5 1.500-1.300 1.800-2.300-.8.500-1.700.8-2.600 1-.8-.8-1.800-1.300-3-1.300-2.300 0-4.100 1.800-4.100 4.100 0 .3 0 .6.1.9-3.400-.2-6.400-1.800-8.400-4.300-.4.600-.6 1.300-.6 2.100 0 1.400.7 2.700 1.800 3.400-.7 0-1.300-.2-1.800-.5v.1c0 2 1.400 3.600 3.300 4-.3.1-.7.1-1.100.1-.3 0-.5 0-.8-.1.5 1.600 2 2.800 3.800 2.900-1.400 1.100-3.200 1.800-5.100 1.800-.3 0-.7 0-1-.1 1.800 1.200 4 1.800 6.300 1.800 7.500 0 11.700-6.200 11.700-11.700v-.5c.8-.6 1.500-1.300 2.100-2.100z" />
+    </svg>
+  );
+}
+export function Wordpress({ size = 16 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <circle cx="12" cy="12" r="9.5" />
+      <path d="M5.500 8.500l4.200 11M9.500 8h6M12.200 12.500l3.300 8M15.500 8l3 8.500" />
+    </svg>
+  );
+}
+export function Phone({ size = 22 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M6.600 10.800a15.100 15.100 0 006.600 6.600l2.200-2.200c.3-.3.700-.4 1-.2 1.100.4 2.300.6 3.600.6.600 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.600 21 3 13.400 3 4c0-.6.4-1 1-1h3.500c.6 0 1 .4 1 1 0 1.300.2 2.500.6 3.600.1.300 0 .7-.2 1l-2.300 2.200z" />
+    </svg>
+  );
+}
+export function Mail({ size = 22 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M3 5h18a1 1 0 011 1v.5l-10 6.500L2 6.500V6a1 1 0 011-1zm-1 4l10 6.500L22 9v9a1 1 0 01-1 1H3a1 1 0 01-1-1V9z" />
+    </svg>
+  );
+}
+export function Quote({ size = 46 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 48 40" fill="currentColor" aria-hidden="true">
+      <path d="M0 40V22C0 9 7 1.500 20 0v8c-6 1-9 4.500-9.500 10H20v22H0zm26 0V22C26 9 33 1.500 46 0v8c-6 1-9 4.500-9.500 10H46v22H26z" />
+    </svg>
+  );
+}
