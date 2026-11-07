@@ -39,12 +39,18 @@ const MENU = [
     ],
   },
   {
-    label: "Portfolio", href: "#", match: [],
-    items: [["Portfolio Default", "#"], ["Portfolio Grid", "#"], ["Portfolio Grid-2", "#"], ["Portfolio Grid-3", "#"], ["Portfolio Grid-4", "#"], ["Portfolio Single", "#"]],
+    label: "Portfolio", href: "/portfolio", match: ["/portfolio"],
+    items: [["Portfolio Default", "/portfolio"], ["Portfolio Grid", "#", [["Portfolio Grid-2", "/portfolio-grid-2"], ["Portfolio Grid-3", "/portfolio-grid-3"], ["Portfolio Grid-4", "/portfolio-grid-4"]]], ["Portfolio Single", "/portfolio/gas-glide"]],
   },
   {
-    label: "Blog", href: "#", match: [],
-    items: [["Blog Default", "#"], ["Blog List", "#"], ["Blog Grid Overlay", "#"], ["Blog Grid", "#"], ["Blog Grid-2", "#"], ["Blog Grid-3", "#"], ["Blog Grid-4", "#"], ["2 Columns + Sidebar", "#"], ["Blog Single", "#"]],
+    label: "Blog", href: "/blog", match: ["/blog"],
+    items: [
+      ["Blog Default", "/blog"],
+      ["Blog List", "/blog-list"],
+      ["Blog Grid Overlay", "/blog-grid-overlay"],
+      ["Blog Grid", "#", [["Blog Grid-2", "#"], ["Blog Grid-3", "#"], ["Blog Grid-4", "#"], ["2 Columns + Sidebar", "#"]]],
+      ["Blog Single", "/blog/oil-and-gas-operations-overview"],
+    ],
   },
 ];
 

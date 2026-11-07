@@ -2,9 +2,9 @@ import Link from "next/link";
 import { ChevronRight } from "./Icons";
 
 // Bannière des pages intérieures : titre, ligne blanche, fil d'Ariane
-export default function PageBanner({ title, crumbs = [] }) {
+export default function PageBanner({ title, crumbs = [], compact = false }) {
   return (
-    <section className="page-banner">
+    <section className={`page-banner ${compact ? "compact" : ""}`}>
       <div className="page-banner-inner">
         <h1>{title}</h1>
       </div>

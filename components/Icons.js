@@ -160,3 +160,29 @@ export function Quote({ size = 46 }) {
     </svg>
   );
 }
+
+export function IconCalendar({ size = 18 }) {
+  return (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3.500" y="5" width="17" height="15.500" rx="1.500" /><path d="M3.500 10h17M8 3v4M16 3v4" /></svg>);
+}
+export function IconUser({ size = 18 }) {
+  return (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><circle cx="12" cy="8" r="4" /><path d="M4 21c0-4.500 3.600-7 8-7s8 2.500 8 7" /></svg>);
+}
+export function IconFolder({ size = 18 }) {
+  return (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M3 6.500a1.500 1.500 0 011.500-1.500H10l2 2.500h7.500A1.500 1.500 0 0121 9v9.500a1.500 1.500 0 01-1.500 1.500h-15A1.500 1.500 0 013 18.500z" /></svg>);
+}
+export function IconPin({ size = 18 }) {
+  return (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M12 21s7-6 7-11.500a7 7 0 10-14 0C5 15 12 21 12 21z" /><circle cx="12" cy="9.500" r="2.500" /></svg>);
+}
+export function IconBriefcase({ size = 18 }) {
+  return (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="1.500" /><path d="M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2M3 13h18" /></svg>);
+}
+export function Check({ size = 14 }) {
+  return (<svg width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d="M3 8.500l3.200 3L13 4.500" /></svg>);
+}
+
+export function SearchSm({ size = 16 }) {
+  return (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" aria-hidden="true"><circle cx="13" cy="10.500" r="6" /><path d="M8.500 15l-5 5" /></svg>);
+}
+export function ArrowsLast({ size = 14 }) {
+  return (<svg width={size} height={size} viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.2" aria-hidden="true"><path d="M3 8h8M8 5l3 3-3 3M13.500 3v10" /></svg>);
+}

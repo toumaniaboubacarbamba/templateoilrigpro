@@ -1,14 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { ArrowRight, Calendar, Gear } from "./Icons";
 
 const POSTS = [
-  { img: "blog-1.webp", cat: "Operations", t: "Pipeline Operations in Oil Industry" },
-  { img: "blog-2.webp", cat: "Energy", t: "Industrial Automation in Oil Operations" },
-  { img: "blog-3.webp", cat: "Technology", t: "Oil and Gas Safety Operations" },
-  { img: "blog-4.webp", cat: "Refining", t: "Oil and Gas Operations Overview" },
-  { img: "blog-5.webp", cat: "Production", t: "Oil Exploration and Drilling Operations" },
-  { img: "blog-6.webp", cat: "Onshore", t: "Upstream Oil and Gas Operations" },
+  { img: "blog-1.webp", cat: "Operations", t: "Pipeline Operations in Oil Industry", slug: "pipeline-operations-in-oil-industry" },
+  { img: "blog-2.webp", cat: "Energy", t: "Industrial Automation in Oil Operations", slug: "industrial-automation-in-oil-operations" },
+  { img: "blog-3.webp", cat: "Technology", t: "Oil and Gas Safety Operations", slug: "oil-and-gas-safety-operations" },
+  { img: "blog-4.webp", cat: "Refining", t: "Oil and Gas Operations Overview", slug: "oil-and-gas-operations-overview" },
+  { img: "blog-5.webp", cat: "Production", t: "Oil Exploration and Drilling Operations", slug: "oil-exploration-and-drilling-operations-2" },
+  { img: "blog-6.webp", cat: "Onshore", t: "Upstream Oil and Gas Operations", slug: "upstream-oil-and-gas-operations" },
 ];
 
 export default function Blog() {
@@ -37,17 +38,17 @@ export default function Blog() {
             <span className="eyebrow">Our Blog</span>
             <h2 className="title-xl">The Next Wave of Oilfield Technology</h2>
           </div>
-          <a href="#" className="btn btn-primary btn-md">
+          <Link href="/blog" className="btn btn-primary btn-md">
             View All Blogs <Gear />
-          </a>
+          </Link>
         </div>
 
         <div className="blog-grid" style={{ gridTemplateColumns: `repeat(${perView}, 1fr)` }}>
           {visible.map((p, k) => (
             <article className="post" key={`${start}-${k}`}>
-              <a href="#" className="post-img">
+              <Link href={`/blog/${p.slug}`} className="post-img">
                 <img src={`/images/${p.img}`} alt={p.t} />
-              </a>
+              </Link>
               <div className="post-meta">
                 <Calendar />
                 <span>November 12, 2025</span>
@@ -55,9 +56,9 @@ export default function Blog() {
                 <span>{p.cat}</span>
               </div>
               <h4>{p.t}</h4>
-              <a href="#" className="read-more">
+              <Link href={`/blog/${p.slug}`} className="read-more">
                 Read More <ArrowRight />
-              </a>
+              </Link>
             </article>
           ))}
         </div>
