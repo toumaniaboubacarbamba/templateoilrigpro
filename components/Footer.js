@@ -22,8 +22,8 @@ export default function Footer() {
             <div className="fcol">
               <h2><Drop /> Service List</h2>
               <ul>
-                {["End-to-End Oil", "Energy Project", "Supply Chain"].map((l) => (
-                  <li key={l}><ArrowUpRight /><a href="#">{l}</a></li>
+                {[["End-to-End Oil", "/service/end-to-end-oil-and-gas-solutions"], ["Energy Project", "/service/energy-project-planning-and-execution"], ["Supply Chain", "/service/oil-and-gas-supply-chain-solutions"]].map(([l, h]) => (
+                  <li key={l}><ArrowUpRight /><Link href={h}>{l}</Link></li>
                 ))}
               </ul>
             </div>

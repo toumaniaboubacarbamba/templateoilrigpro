@@ -5,7 +5,7 @@ import Reveal from "@/components/Reveal";
 export const metadata = { title: "Contact US – Oilrigpro" };
 
 // Carte intégrée (la démo d'origine affiche « London Eye »). Changez la requête q= pour votre adresse.
-const MAP_SRC = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.53124144871!2d-4.024458724969093!3d5.335545294643053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1eb003e7260c3%3A0x1125397be08929e1!2sTour%20F!5e0!3m2!1sfr!2sci!4v1793966944434!5m2!1sfr!2sci"
+const MAP_SRC = "https://www.google.com/maps?q=London+Eye,+London,+United+Kingdom&output=embed";
 
 export default function ContactPage() {
   return (
