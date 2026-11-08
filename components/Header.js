@@ -7,8 +7,15 @@ import { Chevron, Gear, Search } from "./Icons";
 // Chaque entrée : [label, href, sous-menu optionnel]
 const MENU = [
   {
-    label: "Home", href: "/", match: ["/"],
-    items: [["Home Default", "/"], ["Home 2", "#"], ["Home 3", "#"], ["Home 4", "#"], ["Home 5", "#"], ["Landing Page", "#"]],
+    label: "Home", href: "/", match: ["/"], exact: true,
+    mega: [
+      ["Home Default", "/", "/images/thumb-home-1.jpg"],
+      ["Home 2", "/home-2", "/images/thumb-home-2.jpg"],
+      ["Home 3", "/home-3", "/images/thumb-home-3.jpg"],
+      ["Home 4", "/home-4", "/images/thumb-home-4.jpg"],
+      ["Home 5", "/home-5", "/images/thumb-home-5.jpg"],
+      ["Landing Page", "/landing-page", "/images/thumb-home-landing.jpg"],
+    ],
   },
   {
     label: "Pages", href: "#", match: ["/about", "/team", "/faq", "/testimonial", "/contact", "/services-default", "/service-", "/end-to-end"],
@@ -57,7 +64,8 @@ const MENU = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const isActive = (m) => m.match.some((x) => (x === "/" ? pathname === "/" : pathname.startsWith(x)));
+  const HOMES = ["/home-2", "/home-3", "/home-4", "/home-5", "/landing-page"];
+  const isActive = (m) => (m.mega ? pathname === "/" || HOMES.includes(pathname) : m.match.some((x) => pathname.startsWith(x)));
   const close = () => setOpen(false);
 
   return (
@@ -70,10 +78,21 @@ export default function Header() {
         <nav className={`main-nav ${open ? "open" : ""}`}>
           <ul>
             {MENU.map((m) => (
-              <li key={m.label} className={isActive(m) ? "active" : ""}>
+              <li key={m.label} className={`${isActive(m) ? "active" : ""} ${m.mega ? "has-mega" : ""}`}>
                 <Link href={m.href}>
                   {m.label} <Chevron />
                 </Link>
+                {m.mega && (
+                  <div className="mega-menu">
+                    {m.mega.map(([label, href, img]) => (
+                      <Link key={label} href={href} className="mega-item" onClick={close}>
+                        <span className="mega-thumb"><img src={img} alt={label} /></span>
+                        <span className="mega-label">{label}</span>
+                      </Link>
+                    ))}
+                  </div>
+                )}
+                {!m.mega && (
                 <ul className="sub-menu">
                   {m.items.map(([label, href, children]) => (
                     <li key={label} className={children ? "has-children" : ""}>
@@ -92,6 +111,7 @@ export default function Header() {
                     </li>
                   ))}
                 </ul>
+                )}
               </li>
             ))}
           </ul>

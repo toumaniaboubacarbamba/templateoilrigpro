@@ -1,12 +1,16 @@
 "use client";
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
-// Curseur personnalisé : une boule (suit la souris) entourée d'un cercle (suit avec retard)
+// Curseur personnalisé (boule + cercle) : uniquement sur la page d'accueil
 export default function Cursor() {
   const dot = useRef(null);
   const ring = useRef(null);
+  const pathname = usePathname();
+  const enabled = pathname === "/";
 
   useEffect(() => {
+    if (!enabled) return;
     // Pas de curseur personnalisé sur écran tactile
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
@@ -55,13 +59,15 @@ export default function Cursor() {
     return () => {
       root.classList.remove("has-cursor");
       cancelAnimationFrame(raf);
+      if (dot.current) dot.current.style.opacity = 0;
+      if (ring.current) ring.current.style.opacity = 0;
       window.removeEventListener("mousemove", onMove);
       window.removeEventListener("mouseover", onOver);
       window.removeEventListener("mousedown", onDown);
       window.removeEventListener("mouseup", onUp);
       document.removeEventListener("mouseleave", onLeave);
     };
-  }, []);
+  }, [enabled]);
 
   return (
     <>
