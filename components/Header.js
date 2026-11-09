@@ -64,15 +64,16 @@ const MENU = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const light = pathname === "/home-4";
   const HOMES = ["/home-2", "/home-3", "/home-4", "/home-5", "/landing-page"];
   const isActive = (m) => (m.mega ? pathname === "/" || HOMES.includes(pathname) : m.match.some((x) => pathname.startsWith(x)));
   const close = () => setOpen(false);
 
   return (
-    <header className="site-header">
+    <header className={`site-header ${light ? "light" : ""}`}>
       <div className="header-inner">
         <Link href="/" className="logo">
-          <img src="/images/logo.png" alt="Oilrig Pro" />
+          <img src={light ? "/images/logo-dark.png" : "/images/logo.png"} alt="Oilrig Pro" />
         </Link>
 
         <nav className={`main-nav ${open ? "open" : ""}`}>
