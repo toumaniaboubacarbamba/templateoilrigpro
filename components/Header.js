@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Chevron, Gear, Search } from "./Icons";
@@ -61,16 +61,33 @@ const MENU = [
   },
 ];
 
+const LANDING_MENU = [
+  MENU[0],
+  { label: "About Us", href: "#about", match: [] },
+  { label: "Services", href: "#services", match: [] },
+  { label: "Global", href: "#global", match: [] },
+  { label: "Blog", href: "#blog", match: [] },
+];
+
 export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  const light = pathname === "/home-4";
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 30);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname]);
+  const landing = pathname === "/landing-page";
+  const light = pathname === "/home-4" || scrolled;
+  const menu = landing ? LANDING_MENU : MENU;
   const HOMES = ["/home-2", "/home-3", "/home-4", "/home-5", "/landing-page"];
   const isActive = (m) => (m.mega ? pathname === "/" || HOMES.includes(pathname) : m.match.some((x) => pathname.startsWith(x)));
   const close = () => setOpen(false);
 
   return (
-    <header className={`site-header ${light ? "light" : ""}`}>
+    <header className={`site-header ${light ? "light" : ""} ${scrolled ? "scrolled" : ""}`}>
       <div className="header-inner">
         <Link href="/" className="logo">
           <img src={light ? "/images/logo-dark.png" : "/images/logo.png"} alt="Oilrig Pro" />
@@ -78,10 +95,10 @@ export default function Header() {
 
         <nav className={`main-nav ${open ? "open" : ""}`}>
           <ul>
-            {MENU.map((m) => (
+            {menu.map((m) => (
               <li key={m.label} className={`${isActive(m) ? "active" : ""} ${m.mega ? "has-mega" : ""}`}>
                 <Link href={m.href}>
-                  {m.label} <Chevron />
+                  {m.label} {(m.mega || m.items) && <Chevron />}
                 </Link>
                 {m.mega && (
                   <div className="mega-menu">
@@ -93,7 +110,7 @@ export default function Header() {
                     ))}
                   </div>
                 )}
-                {!m.mega && (
+                {!m.mega && m.items && (
                 <ul className="sub-menu">
                   {m.items.map(([label, href, children]) => (
                     <li key={label} className={children ? "has-children" : ""}>
@@ -122,7 +139,7 @@ export default function Header() {
           <button className="search-btn" aria-label="Search">
             <Search />
           </button>
-          <Link href="/contact" className="btn btn-primary btn-sm">
+          <Link href={landing ? "#contact" : "/contact"} className="btn btn-primary btn-sm">
             Get In Touch <Gear />
           </Link>
           <button className="burger" aria-label="Menu" onClick={() => setOpen(!open)}>

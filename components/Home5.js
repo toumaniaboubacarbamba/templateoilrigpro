@@ -33,8 +33,11 @@ export default function Home5() {
         <div className="h5-bars">
           {BARS.map(([n, v]) => (
             <div className="h5-bar" key={n}>
-              <span className="h5-bar-label">{n}</span>
-              <div className="h5-bar-track"><i style={{ width: `${v}%` }} /><b>{v}%</b></div>
+              <div className="h5-bar-track">
+                <i style={{ width: `${v}%` }} />
+                <span>{n}</span>
+                <b style={{ left: `${v}%` }}>{v}%</b>
+              </div>
             </div>
           ))}
         </div>
