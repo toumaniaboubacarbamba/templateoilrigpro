@@ -7,6 +7,10 @@ import ScrollTop from "@/components/ScrollTop";
 export const metadata = {
   title: "Oilrigpro – Oil & Gas Industry",
   description: "Reproduction du template OilRigPro (front uniquement).",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({ children }) {

@@ -55,7 +55,7 @@ const MENU = [
       ["Blog Default", "/blog"],
       ["Blog List", "/blog-list"],
       ["Blog Grid Overlay", "/blog-grid-overlay"],
-      ["Blog Grid", "#", [["Blog Grid-2", "#"], ["Blog Grid-3", "#"], ["Blog Grid-4", "#"], ["2 Columns + Sidebar", "#"]]],
+      ["Blog Grid", "#", [["Blog Grid-2", "/blog-grid-2"], ["Blog Grid-3", "/blog-grid-3"], ["Blog Grid-4", "/blog-grid-4"], ["2 Columns + Sidebar", "/blog-2-columns-sidebar"]]],
       ["Blog Single", "/blog/oil-and-gas-operations-overview"],
     ],
   },

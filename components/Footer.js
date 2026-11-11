@@ -48,7 +48,9 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-        © 2026 ToumaniDev – reproduction du template All rights reserved. <a href="#">oilrigpro</a>. Designed by <a href="#">Zozothemes</a>
+        © 2026 ToumaniDev – reproduction à but pédagogique du template{" "}
+<a href="https://themeforest.net/item/oilrigpro-oil-gas-company-wordpress-theme/62157305" target="_blank" rel="noopener noreferrer">OilRigPro</a>{" "}
+par <a href="https://themeforest.net/user/zozothemes" target="_blank" rel="noopener noreferrer">Zozothemes</a>.
       </div>
     </footer>
   );

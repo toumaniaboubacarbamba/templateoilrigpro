@@ -3,7 +3,7 @@ const TXT = "There are many industries and organizations that depend on efficien
 // Ordre « ancien → récent » (celui de Blog List / Blog Grid Overlay)
 export const POSTS = [
   { slug: "oil-exploration-and-drilling-operations", title: "Oil Exploration and Drilling Operations", date: "November 10, 2025", category: "Drilling", img: "/images/blog-8.webp" },
-  { slug: "energy-transportation-and-pipeline", title: "Energy Transportation and Pipeline", date: "November 12, 2025", category: "Energy", img: "/images/blog-7.webp" },
+  { slug: "energy-transportation-and-pipeline", title: "Energy Transportation and Pipeline", date: "November 12, 2025", category: "Onshore", img: "/images/blog-7.webp" },
   { slug: "oil-and-gas-safety-operations", title: "Oil and Gas Safety Operations", date: "November 12, 2025", category: "Technology", img: "/images/blog-3.webp" },
   { slug: "industrial-automation-in-oil-operations", title: "Industrial Automation in Oil Operations", date: "November 12, 2025", category: "Energy", img: "/images/blog-2.webp" },
   { slug: "pipeline-operations-in-oil-industry", title: "Pipeline Operations in Oil Industry", date: "November 12, 2025", category: "Operations", img: "/images/blog-1.webp", thumb: "/images/thumb-pipeline.webp" },
